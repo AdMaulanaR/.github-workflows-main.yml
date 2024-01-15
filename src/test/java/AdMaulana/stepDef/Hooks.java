@@ -1,11 +1,7 @@
 package AdMaulana.stepDef;
 
-import io.cucumber.java.After;
+import io.cucumber.java.*;
 import io.cucumber.java.Scenario;
-import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-
 
 import java.util.Objects;
 
@@ -31,7 +27,7 @@ public class Hooks {
 
         String[] tags = scenario.getSourceTagNames().toArray(new String[0]);
         tagsRunning = tags[0];
-        if (Objects.equals(tagsRunning, "web")){
+        if (Objects.equals(tagsRunning, "@web")){
             startDriver();
         }
     }
@@ -39,6 +35,7 @@ public class Hooks {
     public void afterTest(Scenario scenario) throws InterruptedException{
 
         if (Objects.equals(tagsRunning, "@web")){
+            Thread.sleep(1000);
             quitDriver();
         }
     }

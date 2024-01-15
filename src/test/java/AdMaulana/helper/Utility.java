@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Utility {
 
+    public static WebDriver driver;
+
     public static File getJSONSchemaFile(String JSONFile) {
         return new File("src/test/java/AdMaulana/helper/JSONSchemas/" + JSONFile);
     }
@@ -24,22 +26,20 @@ public class Utility {
         return email;
     }
 
-    public static WebDriver driver = new ChromeDriver();
-
     public static void startDriver(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
     public static void quitDriver() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         driver.quit();
     }
 }
