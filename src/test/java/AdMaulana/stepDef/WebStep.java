@@ -3,6 +3,7 @@ package AdMaulana.stepDef;
 import AdMaulana.pages.WebPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class WebStep {
@@ -36,4 +37,19 @@ public class WebStep {
     public void userClickButtonLoginNew() {
         webPage.clickButtonLoginNew();
     }
+
+    @Then("user is on homepage")
+    public void userIsOnHomepage() {
+        webPage.isOnHomepage();
+    }
+
+    @Then("user able to see popup message {string}")
+    public void userAbleToSeePopupMessage(String message) {
+    }
+
+    @And("user click button logout")
+    public void userClickButtonLogout() {
+        webPage.clickButtonLogout();
+    }
+
 }

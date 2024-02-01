@@ -35,7 +35,7 @@ public class Hooks {
     public void afterTest(Scenario scenario) throws InterruptedException{
 
         if (Objects.equals(tagsRunning, "@web")){
-            Thread.sleep(1000);
+            Thread.sleep(4000);
             quitDriver();
         }
     }

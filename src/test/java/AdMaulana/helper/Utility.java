@@ -28,18 +28,19 @@ public class Utility {
 
     public static void startDriver(){
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
     }
 
     public static void quitDriver() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(4000);
         driver.quit();
     }
 }
