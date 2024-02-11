@@ -16,7 +16,7 @@ public class ApiStep {
     @Given("prepare url for {string}")
     public void prepareUrlFor(String url) {
         apiPage.prepareUrlFor(url);
-    }
+     }
 
     @And("hit api get all list data")
     public void hitApiGetAllListData() {
