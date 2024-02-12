@@ -9,7 +9,7 @@ public class ApiStep {
 
     ApiPage apiPage;
 
-    public ApiStep (){
+    public ApiStep () {
         this.apiPage = new ApiPage();
     }
 
