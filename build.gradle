@@ -51,7 +51,7 @@ tasks.register('apiTest') {
                     '--plugin', 'html:reports/cucumber-api-report.html',
                     '--glue', 'stepDef',
                     '--tags', "@api",
-                    'src/test/java/AdMaulana/features']
+                    'src/test/java/features']
         }
     }
 }
@@ -67,7 +67,7 @@ tasks.register('webTest') {
                     '--plugin', 'html:reports/cucumber-web-report.html',
                     '--glue', 'stepDef',
                     '--tags', "@web",
-                    'src/test/java/AdMaulana/features']
+                    'src/test/java/features']
         }
     }
 }

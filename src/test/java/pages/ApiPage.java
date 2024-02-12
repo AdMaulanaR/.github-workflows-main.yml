@@ -1,8 +1,8 @@
-package AdMaulana.pages;
+package pages;
 
-import AdMaulana.helper.Endpoint;
-import AdMaulana.helper.Utility;
-import io.restassured.RestAssured;
+import helper.Endpoint;
+import helper.Utility;
+import helper.Models;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -10,7 +10,6 @@ import io.restassured.response.Response;
 import java.io.File;
 import java.util.List;
 
-import static AdMaulana.helper.Models.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
@@ -39,7 +38,7 @@ public class ApiPage {
         }
     }
     public void hitApiGetAllListData(){
-        res = getAllListData(setUrl);
+        res = Models.getAllListData(setUrl);
     }
     public void validationStatusCodeIsEquals(Integer status_code){
         assertThat(res.statusCode()).isEqualTo(status_code);
@@ -66,7 +65,7 @@ public class ApiPage {
     }
 
     public void hitApiGetDataSpecific(){
-        res = getListDataSpecific(setUrl);
+        res = Models.getListDataSpecific(setUrl);
     }
 
     public void validationResponseBodyDataSpecific(){
@@ -85,7 +84,7 @@ public class ApiPage {
     }
 
     public void hitApiGetDataWrongId(){
-        res = getDataWrongId(setUrl);
+        res = Models.getDataWrongId(setUrl);
     }
 
     public void validationResponseBodyWrongId(){
@@ -96,7 +95,7 @@ public class ApiPage {
     }
 
     public void hitApiPostCreateNewData(){
-        res = postCreateNewData(setUrl);
+        res = Models.postCreateNewData(setUrl);
     }
 
     public void validationResponseBodyPostCreateNewData(){
@@ -117,7 +116,7 @@ public class ApiPage {
     }
 
     public void hitApiDeleteNewData(){
-        res = deleteUser(setUrl, global_id);
+        res = Models.deleteUser(setUrl, global_id);
     }
 
 }
