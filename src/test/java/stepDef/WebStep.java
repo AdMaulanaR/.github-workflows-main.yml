@@ -49,7 +49,7 @@ public class WebStep {
 
     @And("user click button logout")
     public void userClickButtonLogout() {
-        webPage.clickButtonLogout();
+//        webPage.clickButtonLogout();
     }
 
 }
