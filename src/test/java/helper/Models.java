@@ -1,11 +1,11 @@
-package AdMaulana.helper;
+package helper;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
 
-import static AdMaulana.helper.Utility.generateRandomEmail;
+import static helper.Utility.generateRandomEmail;
 
 public class Models {
 

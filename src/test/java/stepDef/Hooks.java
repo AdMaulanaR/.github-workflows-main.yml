@@ -1,12 +1,12 @@
-package AdMaulana.stepDef;
+package stepDef;
 
 import io.cucumber.java.*;
 import io.cucumber.java.Scenario;
 
 import java.util.Objects;
 
-import static AdMaulana.helper.Utility.quitDriver;
-import static AdMaulana.helper.Utility.startDriver;
+import static helper.Utility.quitDriver;
+import static helper.Utility.startDriver;
 
 public class Hooks {
 

@@ -1,6 +1,6 @@
-package AdMaulana.stepDef;
+package stepDef;
 
-import AdMaulana.pages.ApiPage;
+import pages.ApiPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

@@ -1,15 +1,13 @@
-package AdMaulana.pages;
+package pages;
 
+import helper.Utility;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static AdMaulana.helper.Utility.driver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -25,30 +23,30 @@ public class WebPage {
 
 
     public void isOnLoginPage(){
-        driver.get("https://www.demoblaze.com/");
+        Utility.driver.get("https://www.demoblaze.com/");
     }
     public void clickButtonLogin(){
-        driver.findElement(button_login).click();
+        Utility.driver.findElement(button_login).click();
     }
     public void inputUserName(String username){
-        driver.findElement(input_username).sendKeys(username);
+        Utility.driver.findElement(input_username).sendKeys(username);
     }
     public void inputPassword(String password){
-        driver.findElement(input_password).sendKeys(password);
+        Utility.driver.findElement(input_password).sendKeys(password);
     }
     public void clickButtonLoginNew(){
-        driver.findElement(button_login_new).click();
+        Utility.driver.findElement(button_login_new).click();
     }
     public void isOnHomepage(){
-        driver.findElement(productTitle);
-        WebElement productElement = driver.findElement(productTitle);
+        Utility.driver.findElement(productTitle);
+        WebElement productElement = Utility.driver.findElement(productTitle);
         assertTrue(productElement.isDisplayed());
         assertEquals("Samsung galaxy s6", productElement.getText());
     }
     public void clickButtonLogout(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Utility.driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(button_logout));
-        driver.findElement(button_logout).click();
+        Utility.driver.findElement(button_logout).click();
 
     }
 
