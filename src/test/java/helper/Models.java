@@ -4,7 +4,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
-
 import static helper.Utility.generateRandomEmail;
 
 public class Models {
@@ -46,6 +45,7 @@ public class Models {
     public static Response deleteUser(String endpoint, String user_id){
         setupHeader();
         String finalEndpoint = endpoint + "/" + user_id;
+        System.out.println(finalEndpoint);
         return request.when().delete(finalEndpoint);
     }
 }

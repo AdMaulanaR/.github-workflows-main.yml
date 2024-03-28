@@ -96,9 +96,11 @@ public class ApiPage {
 
     public void hitApiPostCreateNewData(){
         res = Models.postCreateNewData(setUrl);
+        System.out.println(res.getBody().asString());
     }
 
     public void validationResponseBodyPostCreateNewData(){
+
         JsonPath jsonPathEvaluator = res.jsonPath();
         Integer id = jsonPathEvaluator.get("id");
         String name = jsonPathEvaluator.get("name");

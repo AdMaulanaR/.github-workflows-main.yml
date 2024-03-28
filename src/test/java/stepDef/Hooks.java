@@ -24,7 +24,6 @@ public class Hooks {
     @Before
     public void beforeTest(Scenario scenario){
         System.out.println("Before Test");
-
         String[] tags = scenario.getSourceTagNames().toArray(new String[0]);
         tagsRunning = tags[0];
         if (Objects.equals(tagsRunning, "@web")){
@@ -33,7 +32,6 @@ public class Hooks {
     }
     @After
     public void afterTest(Scenario scenario) throws InterruptedException{
-
         if (Objects.equals(tagsRunning, "@web")){
             Thread.sleep(4000);
             quitDriver();
